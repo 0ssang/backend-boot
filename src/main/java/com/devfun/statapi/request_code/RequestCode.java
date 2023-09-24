@@ -11,7 +11,6 @@ import lombok.Setter;
 @Entity
 public class RequestCode {
     @Id
-    @Column
     private String code;
 
     @Column

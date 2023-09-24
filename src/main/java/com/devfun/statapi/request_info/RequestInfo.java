@@ -12,15 +12,14 @@ import lombok.Setter;
 public class RequestInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "req_code")
+    @ManyToOne (fetch = FetchType.LAZY)
+    @JoinColumn(name = "requestinfo_code")
     private RequestCode requestCode;
 
-    @ManyToOne
-    @JoinColumn(name = "req_uid")
+    @ManyToOne (fetch = FetchType.LAZY)
+    @JoinColumn(name = "requestinfo_uid")
     private User user;
 
     @Column
